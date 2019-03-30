@@ -26,7 +26,7 @@ const order = (props) => {
 		});
 	}
 		const orderDataOutput = orderData.map(order =>{
-		return <p><span style={{textTransform: 'capitalize', display:'inline-block' , margin:'0 8px', border:'1px solid #ccc', padding:'5px'}} key={order.name}>{order.name}:<strong> ({order.value})</strong></span></p>
+		return <span style={{textTransform: 'capitalize', display:'inline-block' , margin:'0 8px', border:'1px solid #ccc', padding:'5px'}} key={order.name}>{order.name}:<strong> ({order.value})</strong></span>
 	});
 	let btnTypeString = '';
 	let ButtonString = '';
@@ -41,7 +41,7 @@ const order = (props) => {
 			<div className="Order OrderOpen">
 				<p>Ingredients :{ingredientsOutput}</p>
 				<Button btnType={btnTypeString} clicked={showOrderClick}>{ButtonString}</Button>
-				{	showOrderData	? <p>OrderData :{orderDataOutput}</p> :null
+				{	showOrderData	?<div> OrderData :<p>{orderDataOutput}</p></div> :null
 					}
 				
 				<p>Price: <strong>USD {Number.parseFloat(props.price).toFixed(2)}</strong></p>

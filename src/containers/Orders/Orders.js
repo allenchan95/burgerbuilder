@@ -24,6 +24,10 @@ class Orders extends Component {
 		pages:0
 
 	}
+	componentDidUpdate() {
+	    window.scrollTo(0, 0)
+   
+  }
 	componentDidMount() {
 		// axios.get('/orders.json')
 		// 	.then(res=>{
@@ -43,6 +47,7 @@ class Orders extends Component {
 
 
 	}
+
 	// onShowMoreClicked = () => {
 	// 	const countTemp =  this.state.count+5;
 	// 	if(this.props.orders.length < countTemp){
@@ -84,6 +89,7 @@ class Orders extends Component {
 	
 		return(
 			<div>
+				<div ref={(ref) => this._div = ref} />
 				{orders.length> 0 ? orders : this.props.loading?  <Spinner /> :<div className='Message'><h1><strong>NO ORDER RECORD YET,LETS START TO MAKE SOME ORDERS!</strong></h1></div>}
 				
 				{pages?<div className=''> <Page pageConfig={{totalPage: pages}} pageCallbackFn={this.getCurrentPage}/></div> : null}
