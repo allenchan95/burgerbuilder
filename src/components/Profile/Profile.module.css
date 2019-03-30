@@ -1,0 +1,11 @@
+.Profile {
+	text-align: center;
+	width: 80%;
+	margin: auto;
+	border: 1px solid rgba(0,0,0,0.1);
+	box-shadow: 0 2px 3px #ccc;
+}
+
+.ProfileItem:not(:last-child) {
+	border-bottom:  1px solid rgba(0,0,0,0.1);
+}
